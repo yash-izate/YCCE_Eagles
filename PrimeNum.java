@@ -6,22 +6,23 @@ public class PrimeNum {
 
     System.out.println("Enter a number: ");
     int num = sc.nextInt();
+    int i = 2;
+    boolean flag = false;
 
-    int x = 2;
-    while (x<num) {
+    while (i < num) {
 
-      if (num%x != 0) {
-        System.out.println("Prime");  
-        break;      
-      } else {
-        System.out.println("not Prime");
+      if (num % i == 0) {
+        flag = true;
+        break;
       }
-
-      x++;
+      i++;
     }
 
+    if (flag == false) {
+      System.out.println("Prime");
+    } else {
+      System.out.println("not Prime");
+    }
     sc.close();
-    
   }
-  
 }
