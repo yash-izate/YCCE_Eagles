@@ -9,6 +9,7 @@ public class Main {
     String s = "Nagpur";
     boolean e = true;
 
+    System.out.println(c + " " + e);
     System.out.println("a = " + a);
     System.out.println(d + " " + s);
     System.out.println(a + b);
