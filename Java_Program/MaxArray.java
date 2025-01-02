@@ -1,3 +1,4 @@
+package Java_Program;
 public class MaxArray {
   public static void main(String[] args) {
 
