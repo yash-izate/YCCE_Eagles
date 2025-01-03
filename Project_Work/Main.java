@@ -1,5 +1,7 @@
 package Project_Work;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 // Class to represent an item
@@ -36,25 +38,23 @@ class Item {
 
 // Class to represent the billing system
 class BillingSystem {
-    private Item[] items;
-    private int itemCount;
+    private List<Item> items;
 
     // Constructor
-    public BillingSystem(int itemCount) {
-        items = new Item[itemCount];
-        this.itemCount = itemCount;
+    public BillingSystem() {
+        items = new ArrayList<>();
     }
 
     // Method to add items to the billing system
-    public void addItem(int index, Item item) {
-        items[index] = item;
+    public void addItem(Item item) {
+        items.add(item);
     }
 
     // Method to calculate total price before tax
     public double calculateTotalPrice() {
         double total = 0;
-        for (int i = 0; i < itemCount; i++) {
-            total += items[i].getTotalPrice();
+        for (Item item : items) {
+            total += item.getTotalPrice();
         }
         return total;
     }
@@ -71,10 +71,15 @@ class BillingSystem {
 
     // Method to print the bill
     public void printBill() {
+        if (items.isEmpty()) {
+            System.out.println("No items to display.");
+            return;
+        }
+
         System.out.println("\n------- BILL -------");
         System.out.println("Item Name\tPrice\tQuantity\tTotal");
-        for (int i = 0; i < itemCount; i++) {
-            System.out.println(items[i].getName() + "\t\t" + items[i].getPrice() + "\t" + items[i].getQuantity() + "\t\t" + items[i].getTotalPrice());
+        for (Item item : items) {
+            System.out.println(item.getName() + "\t\t" + item.getPrice() + "\t" + item.getQuantity() + "\t\t" + item.getTotalPrice());
         }
 
         System.out.println("\nTotal Price (Before Tax): " + calculateTotalPrice());
@@ -86,41 +91,66 @@ class BillingSystem {
 // Main class to drive the program
 public class Main {
     public static void main(String[] args) {
-        // Create a scanner object to take user input
         Scanner scanner = new Scanner(System.in);
 
-        // Number of items
-        System.out.print("Enter the number of items: ");
-        int numberOfItems = scanner.nextInt();
-        scanner.nextLine();  // Consume the newline character
+        System.out.println("Welcome to the Billing System!");
 
-        // Create a BillingSystem object
-        BillingSystem billingSystem = new BillingSystem(numberOfItems);
+        // Create an instance of BillingSystem
+        BillingSystem billingSystem = new BillingSystem();
 
-        // Get details for each item and add them to the billing system
-        for (int i = 0; i < numberOfItems; i++) {
-            System.out.println("\nEnter details for item " + (i + 1) + ":");
+        boolean continueRunning = true;
 
-            // Get item name
-            System.out.print("Item name: ");
-            String name = scanner.nextLine();
+        while (continueRunning) {
+            System.out.println("\n--- Menu ---");
+            System.out.println("1. Add Item");
+            System.out.println("2. View Bill");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
 
-            // Get item price
-            System.out.print("Price of " + name + ": ");
-            double price = scanner.nextDouble();
-
-            // Get item quantity
-            System.out.print("Quantity of " + name + ": ");
-            int quantity = scanner.nextInt();
+            int choice = scanner.nextInt();
             scanner.nextLine();  // Consume the newline character
 
-            // Create an Item object and add it to the billing system
-            Item item = new Item(name, price, quantity);
-            billingSystem.addItem(i, item);
-        }
+            switch (choice) {
+                case 1:
+                    // Add Item
+                    System.out.println("\nEnter details for the item:");
 
-        // Print the bill
-        billingSystem.printBill();
+                    // Get item name
+                    System.out.print("Item name: ");
+                    String name = scanner.nextLine();
+
+                    // Get item price
+                    System.out.print("Price of " + name + ": ");
+                    double price = scanner.nextDouble();
+
+                    // Get item quantity
+                    System.out.print("Quantity of " + name + ": ");
+                    int quantity = scanner.nextInt();
+                    scanner.nextLine();  // Consume the newline character
+
+                    // Create an Item object and add it to the billing system
+                    Item item = new Item(name, price, quantity);
+
+                    // Add item to the system
+                    billingSystem.addItem(item);
+                    System.out.println("Item added successfully!");
+                    break;
+
+                case 2:
+                    // View Bill
+                    billingSystem.printBill();
+                    break;
+
+                case 3:
+                    // Exit the program
+                    System.out.println("Thank you for using the Billing System. Goodbye!");
+                    continueRunning = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        }
 
         // Close the scanner object
         scanner.close();
