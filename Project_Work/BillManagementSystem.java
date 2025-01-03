@@ -156,3 +156,99 @@ public class BillManagementSystem {
         scanner.close();
     }
 }
+
+
+
+
+
+
+
+
+// package Project_Work;
+
+// import java.util.ArrayList;
+// import java.util.Scanner;
+
+// class Item{
+// 	private String name;
+// 	private double price;
+// 	private int quantity;
+	
+// 	public Item(String name, double price, int quantity) {
+// 		this.name=name;
+// 		this.price=price;
+// 		this.quantity=quantity;
+// 	}
+// 	public String getName() {return name;}
+// 	public double getPrice() {return price;}
+// 	public int getQuantity() {return quantity;}
+// 	public double getTotalPrice() {return price*quantity;}
+// }
+// class BillingSystem{
+// 	private ArrayList<Item> items;
+// 	private static final double DISCOUNT_THRESHOLD=500;
+// 	private static final double DISCOUNT_RATE=0.1; //10% discount
+// 	public BillingSystem() {
+// 		items=new ArrayList<>();
+// 	}
+// 	public void addItem(String name, double price, int quantity) {
+// 		items.add(new Item(name, price, quantity));
+// 		System.out.println("Item added to the bill");
+// 	}
+// 	public void generateBill() {
+// 		double totalAmount=0.0;
+// 		System.out.println("\n---Bill Summary---");
+// 		System.out.printf("%-20s %-10s %-10s %-10s\n", "Item.Name", "Price", "Quanity", "Total");
+// 		System.out.println("-------------------------------");
+// 		for(Item item:items) {
+// 			double itemTotal = item.getTotalPrice();
+// 			totalAmount+=itemTotal;
+// 			System.out.printf("%-20s %-10s %-10s %-10s\n", item.getName(), item.getPrice(), item.getQuantity(), item.getTotalPrice());
+// 		}
+// 		System.out.println("-------------------------------");
+// 		System.out.printf("%-30s %-10.2f\n", "Subtotal:", totalAmount);
+// 		if(totalAmount>DISCOUNT_THRESHOLD) {
+// 			double discount = totalAmount*DISCOUNT_RATE;
+// 			totalAmount -=discount;
+// 			System.out.printf("%-30s %-10.2f\n", "Disount(10%):", discount);
+// 		}
+// 		else {
+// 			System.out.printf("%-30s %-10.2f\n", "Disount:","Not Applicable");
+// 		}
+// 		System.out.printf("%-30s %-10.2f\n", "Total Amount:", totalAmount);
+// 		System.out.println("----------Thank you!---------------");
+// 	}
+// 	}
+
+// public class Main{
+// 	public static void main(String[] args) {
+// 		Scanner scanner = new Scanner(System.in);
+// 		BillingSystem billingSystem = new BillingSystem();
+// 		int choice;
+// 		do {
+// 			System.out.println("\nBilling System");
+// 			System.out.println("1. Add Item");
+// 			System.out.println("2. Generate Bill");
+// 			System.out.println("3. Exit");
+// 			System.out.print("Enter your choice :");
+// 			choice = scanner.nextInt();
+// 			scanner.nextLine();//consume new line character
+// 			switch(choice) {
+// 			case 1:
+// 				System.out.print("Enter item name : ");
+// 				String name = scanner.nextLine();
+// 				System.out.print("Enter item price : ");
+// 				double price = scanner.nextDouble();
+// 				System.out.print("Enter item quantity: ");
+// 				int quantity = scanner.nextInt();
+// 				billingSystem.addItem(name, price, quantity);
+// 				break;
+// 			case 2:
+// 				billingSystem.generateBill(); break;
+// 			case 3: 
+// 				System.out.println("Exiting Thank you!"); break;
+// 			default:System.out.println("invalid choice. Try again!");
+// 			}}while(choice!=3);
+// 		scanner.close();
+// 		}
+// 	}
