@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StringOccurances {
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   public static void main(String[] args) {
     Map m = new HashMap();
 
@@ -18,7 +19,7 @@ public class StringOccurances {
       }
     }
 
-    System.out.println();
+    System.out.println(m);
   }
 
 }
