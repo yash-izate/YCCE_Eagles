@@ -1,4 +1,4 @@
-package Java_Program;
+package Basic_DSA;
 
 import java.util.HashMap;
 import java.util.Map;
