@@ -1,5 +1,5 @@
 package Java_Program;
-public class Main {
+public class MainEx {
   public static void main(String[] args) {
     System.out.println("Welcome to Eagles !");
 
