@@ -89,7 +89,7 @@ class BillingSystem {
 }
 
 // Main class to drive the program
-public class Main {
+public class BillManagementSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
