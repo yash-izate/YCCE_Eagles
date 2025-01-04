@@ -6,6 +6,6 @@ Phase 3 - Advanced Programming
 In Phase 3 of Eagles - 
                     
           1. Java Programming - Recursion, String, Array, Loops, Conditions, Classes, Objects
-          2. Basic DSA        - ArrayList, TreeList, HashMap
+          2. Basic DSA        - ArrayList, TreeList, HashMap, LinkedList
           3. Project Work     - Billing System
 
