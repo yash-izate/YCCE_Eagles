@@ -9,3 +9,6 @@ In Phase 3 of Eagles -
           2. Basic DSA        - ArrayList, TreeList, HashMap, LinkedList
           3. Project Work     - Billing System
 
+H.W. 2 program on Collections
+
+imp - frequency of character
