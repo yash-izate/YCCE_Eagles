@@ -1,0 +1,10 @@
+Phase 1 - Exploring Computer Science
+Phase 2 - General Aptitude 
+Phase 3 - Advanced Programming
+
+
+In Phase 3 of Eagles - 
+                    
+          1. Java Programming
+          2. Basic DSA 
+          3. Project Work
