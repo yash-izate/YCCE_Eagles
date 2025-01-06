@@ -12,3 +12,7 @@ In Phase 3 of Eagles -
 H.W. 2 program on Collections
 
 imp - frequency of character
+
+6 Jan 2025 - Sorting: 1. Bubble sort
+                      2. insertion sort
+                      3. selection sort
