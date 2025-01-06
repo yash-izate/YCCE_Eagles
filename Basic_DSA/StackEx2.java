@@ -1,3 +1,5 @@
+package Basic_DSA;
+
 import java.util.Stack;
 
 public class StackEx2 {

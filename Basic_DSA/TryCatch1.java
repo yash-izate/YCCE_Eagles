@@ -1,3 +1,4 @@
+package Basic_DSA;
 
 public class TryCatch1 {
 
