@@ -11,6 +11,8 @@ public class TryCatch1 {
             getInteger();
         } catch (Exception e) {
             System.out.println("Enter number only");
+        } finally {
+            System.out.println("Always get executed"); 
         }
     }
 
