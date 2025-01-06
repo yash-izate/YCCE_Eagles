@@ -1,3 +1,5 @@
+package Java_Program;
+
 public class TryCatchFinally2 {
     @SuppressWarnings("UseSpecificCatch")
     public static void getInteger() {

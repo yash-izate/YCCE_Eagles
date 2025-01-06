@@ -1,3 +1,4 @@
+package Java_Program;
 
 class CustomExceptionUser extends Exception {
 
