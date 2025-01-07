@@ -21,8 +21,9 @@ public class ExpenseManager {
         while (true) {
             System.out.println("\n========== Personal Expenses Manager ==========");
             System.out.println("1. Add Expenses");
-            System.out.println("2. Generate Report");
-            System.out.println("3. Save & Exit");
+            System.out.println("2. View Expenses");
+            System.out.println("3. Generate Report");
+            System.out.println("4. Save & Exit");
             System.out.print("Your Response: ");
             int choice;
 
@@ -39,9 +40,12 @@ public class ExpenseManager {
                     addExpense();
                     break;
                 case 2:
-                    generateReport();
+                    viewExpenses();  // Fixed: Add missing break to prevent fall-through
                     break;
                 case 3:
+                    generateReport();
+                    break;
+                case 4:
                     saveAndExit();
                     return; // Exit loop after saving
                 default:
@@ -70,6 +74,23 @@ public class ExpenseManager {
         Expense expense = new Expense(date, category, description, amount);
         expenses.add(expense); // Add to list
         System.out.println("Expense added successfully!");
+    }
+
+    public static void viewExpenses() {
+        if (expenses.isEmpty()) {
+            System.out.println("No expenses recorded.");
+            return;
+        }
+
+        // Print table header
+        System.out.println("\nDate         | Category      | Description         | Amount");
+        System.out.println("---------------------------------------------------------------");
+
+        // Print each expense with properly aligned columns
+        for (Expense expense : expenses) {
+            System.out.println(String.format("%-12s | %-12s | %-18s | %.2f",
+                    expense.getDate(), expense.getCategory(), expense.getDescription(), expense.getAmount()));
+        }
     }
 
     public static void generateReport() {
