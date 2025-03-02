@@ -4,8 +4,8 @@ public class Problem2 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Enter the no. of test cases: ");
-    int cases = sc.nextInt(); 
+    // System.out.println("Enter the no. of test cases: ");
+    // int cases = sc.nextInt(); 
 
     System.out.println("Enter marks of Dragon (DSA-TOC-DM): ");
     int d1 = sc.nextInt();
